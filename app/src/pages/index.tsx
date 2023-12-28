@@ -1,13 +1,14 @@
-import { Inter } from 'next/font/google'
+import dynamic from 'next/dynamic'
+import { Account } from '@/components/Account'
+import { TokenBalance } from '@/components/TokenBalance'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+function Home() {
 	return (
-		<main
-			className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-		>
-			Hello world
+		<main className="p-6">
+			<Account />
+			<TokenBalance />
 		</main>
 	)
 }
+
+export default dynamic(() => Promise.resolve(Home), { ssr: false })
