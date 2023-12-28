@@ -34,7 +34,7 @@ export function Account() {
 								className="border rounded px-2 my-1 block"
 								onClick={() => connect({ connector })}
 							>
-								{`${name}${isConnecting && ' (connecting)'}`}
+								{`${name}${isConnecting ? ' (connecting)' : ''}`}
 							</button>
 						)
 					})}
